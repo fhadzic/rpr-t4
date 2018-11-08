@@ -5,19 +5,21 @@ import java.util.List;
 
 public class Predmet {
 
+    List<Student> studenti = new ArrayList<Student>();
     String nazivPredmeta;
     boolean obavezni;
     boolean izborni;
     int ECTS;
 
-    List<Student> studenti = new ArrayList<Student>();
 
-    public Predmet(String naziv, boolean obavezni, boolean izborni, int ects){
+    public Predmet(String naziv, boolean obavezni, int ects){
         this.nazivPredmeta = naziv;
         this.obavezni = obavezni;
         this.izborni = izborni;
         this.ECTS = ects;
     }
+
+
 
     public String getNazivPredmeta() {
         return nazivPredmeta;
