@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Predmet {
 
-    List<Student> studenti = new ArrayList<Student>();
+    List<Student> bivsiStudenti = new ArrayList<Student>();
+    List<Student> aktivniStudenti = new ArrayList<Student>();
     String nazivPredmeta;
     boolean obavezni;
     int ECTS;
+    int ocjena = 5;
 
 
     public Predmet(String naziv, boolean obavezni, int ects){
@@ -17,7 +19,13 @@ public class Predmet {
         this.ECTS = ects;
     }
 
+    public int getOcjena() {
+        return ocjena;
+    }
 
+    public void setOcjena(int ocjena) {
+        this.ocjena = ocjena;
+    }
 
     public String getNazivPredmeta() {
         return nazivPredmeta;
@@ -44,20 +52,43 @@ public class Predmet {
         this.ECTS = ECTS;
     }
 
-    public void dodajStudenta(Student s){
-        studenti.add(s);
+    public void dodajStudentaNaPredmet(Student s){
+        aktivniStudenti.add(s);
     }
 
-    public int brojStudenata(){
-        return studenti.size();
+    public void ispisiStudentaSaPredmeta(Student s){
+
+        for(int i=0; i<aktivniStudenti.size(); i++) {
+            if(aktivniStudenti.get(i) == s){
+                bivsiStudenti.add(aktivniStudenti.get(i));
+                aktivniStudenti.remove(aktivniStudenti.get(i));
+            }
+        }
     }
 
-    public void spisakStudenata(){
+    public int brojAktinihStudenata(){
+        return aktivniStudenti.size();
+    }
 
-        System.out.println("Studenti na predmetu " + nazivPredmeta + " su: ");
-        for(int i=0; i<studenti.size(); i++){
+    public void spisAkaktivnihStudenata(){
 
-            System.out.println( i+1 + ". " + (Student) studenti.get(i));
+        System.out.println("Aktivni studenti na predmetu " + nazivPredmeta + " su: ");
+        for(int i=0; i<aktivniStudenti.size(); i++){
+
+            System.out.println( i+1 + ". " + (Student) aktivniStudenti.get(i));
+        }
+    }
+
+    public int brojBivsihStudenata(){
+        return bivsiStudenti.size();
+    }
+
+    public void spisakBivsihStudenata(){
+
+        System.out.println("Bivsi studenti na predmetu " + nazivPredmeta + " su: ");
+        for(int i=0; i<bivsiStudenti.size(); i++){
+
+            System.out.println( i+1 + ". " + (Student) bivsiStudenti.get(i) + ", Ocjena: " + ocjena);
         }
     }
 
