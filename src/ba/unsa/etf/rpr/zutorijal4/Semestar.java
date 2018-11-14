@@ -14,8 +14,6 @@ public class Semestar {
         this.ECTS = ECTS;
     }
 
-
-
     public void dodajPredmet(Predmet p){
 
         predmeti.add(p);
@@ -33,4 +31,11 @@ public class Semestar {
             System.out.println(i+1 + ". " + (Predmet)predmeti.get(i));
         }
     }
+/*
+    @Override
+    public String toString() {
+        return ;
+    }
+    */
+
 }

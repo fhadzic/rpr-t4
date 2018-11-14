@@ -6,10 +6,10 @@ import java.util.Set;
 
 public class PlanStudija {
 
-    Map< Integer, Set<Predmet> > mapa = new HashMap<>();
+    Map< Integer, Set<Semestar> > mapa = new HashMap<>();
 
-    public PlanStudija(Integer brojSemestra, Set<Predmet> predmeti){
-        mapa.put(brojSemestra, predmeti);
+    public PlanStudija(Integer brojSemestra, Set<Semestar> semestar){
+        mapa.put(brojSemestra, semestar);
     }
 
 

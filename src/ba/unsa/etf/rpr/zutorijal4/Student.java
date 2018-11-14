@@ -17,7 +17,7 @@ public class Student {
     }
 
     public void upisiStudentaNaPredmet(Predmet p){
-        predmeti.add(Predmet p);
+        predmeti.add(p);
     }
 
     public String getIme() {
@@ -42,6 +42,14 @@ public class Student {
 
     public void setIndex(int index) {
         this.index = index;
+    }
+
+    public void spisakPredmeta(){
+
+        System.out.println("Student sluša slijedeće predmete: \n");
+        for(int i=0; i<predmeti.size(); i++){
+            System.out.println(" -  " + predmeti.get(i));
+        }
     }
 
     @Override

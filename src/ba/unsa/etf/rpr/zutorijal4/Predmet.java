@@ -8,14 +8,12 @@ public class Predmet {
     List<Student> studenti = new ArrayList<Student>();
     String nazivPredmeta;
     boolean obavezni;
-    boolean izborni;
     int ECTS;
 
 
     public Predmet(String naziv, boolean obavezni, int ects){
         this.nazivPredmeta = naziv;
         this.obavezni = obavezni;
-        this.izborni = izborni;
         this.ECTS = ects;
     }
 
@@ -37,13 +35,6 @@ public class Predmet {
         this.obavezni = obavezni;
     }
 
-    public boolean isIzborni() {
-        return izborni;
-    }
-
-    public void setIzborni(boolean izborni) {
-        this.izborni = izborni;
-    }
 
     public int getECTS() {
         return ECTS;
